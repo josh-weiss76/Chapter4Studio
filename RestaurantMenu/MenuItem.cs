@@ -24,7 +24,6 @@ namespace RestaurantMenu
             Description = description;
             Category = category;
             IsNew = isNew;
-
         }
     }
 }
