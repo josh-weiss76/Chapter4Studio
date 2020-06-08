@@ -9,9 +9,9 @@ namespace RestaurantMenu
         public static List<MenuItem> CompleteMenu()
         {
             var fullMenu = new List<MenuItem>();
-            MenuItem item1 = new MenuItem("burrito", 7.99, "Beef, bean, and cheese", "entree", false);
-            MenuItem item2 = new MenuItem("taco", 3.99, "Beef, cheese, lettuce, and tomato in a crispy taco shell", "entree", false);
-            MenuItem item3 = new MenuItem("quesadilla", 6.99, "Beef and cheese", "entree", true);
+            MenuItem item1 = new MenuItem("Burrito", 7.99, "Beef, bean, and cheese", "entree", false);
+            MenuItem item2 = new MenuItem("Taco", 3.99, "Beef, cheese, lettuce, and tomato in a crispy taco shell", "entree", false);
+            MenuItem item3 = new MenuItem("Quesadilla", 6.99, "Beef and cheese", "entree", true);
             //var addItem = true;
 
             //while (addItem)
@@ -53,6 +53,15 @@ namespace RestaurantMenu
             Console.WriteLine("Please enter date of menu update (MM/DD/YYYY): ");
             string dateOfUpdate = Console.ReadLine();
             return dateOfUpdate;
+        }
+
+        public static List<MenuItem> UpdatedMenu()
+        {
+            var UpToDateMenu = CompleteMenu();
+            Console.WriteLine("Which item would you like to remove? (Enter 1 to " + UpToDateMenu.Count);
+            int itemNumber = int.Parse(Console.ReadLine()) -1;
+            UpToDateMenu.RemoveAt(itemNumber);
+            return UpToDateMenu;
         }
     }
 }
