@@ -16,6 +16,7 @@ namespace RestaurantMenu
             Console.WriteLine("The menu was last updated on " + updateDate);
             Console.WriteLine(currentMenuItems.Count);
             PrintMenu();
+            PrintItem();
 
         }
         private static void PrintMenu()
@@ -28,6 +29,19 @@ namespace RestaurantMenu
                 Console.WriteLine("Description: " + currentMenuItems[i].Description);
                 Console.WriteLine("Price: " + currentMenuItems[i].Price);
             }
+        }
+
+        private static void PrintItem()
+        {
+            List<MenuItem> currentMenuItems = Menu.CompleteMenu();
+            Console.WriteLine("Please select a number from 1 to " + currentMenuItems.Count + ": ");
+            int itemSelected = int.Parse(Console.ReadLine());
+            Console.WriteLine("The item you selected is below: ");
+            Console.WriteLine("Item " + (itemSelected));
+            Console.WriteLine(currentMenuItems[itemSelected-1].Name);
+            Console.WriteLine("Description: " + currentMenuItems[itemSelected-1].Description);
+            Console.WriteLine("Price: " + currentMenuItems[itemSelected-1].Price);
+
         }
     }
 }
